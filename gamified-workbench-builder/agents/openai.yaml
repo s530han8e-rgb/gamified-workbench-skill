@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gamified Workbench Builder"
+  short_description: "Build private, game-like personal workbenches"
+  default_prompt: "Design or implement a game-like personal workbench with safe data boundaries, autosave, reports, and progressive web app support."
