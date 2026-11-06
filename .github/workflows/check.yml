@@ -1,0 +1,20 @@
+name: Validate workbench
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript syntax
+        run: node --check demo/app.mjs
+      - name: Verify games and deck
+        run: node --test tests/*.test.mjs
+      - name: Check docs and release boundaries
+        run: node scripts/check-release.mjs

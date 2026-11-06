@@ -1,20 +1,76 @@
-# Gamified Workbench Builder
+# 森林工作台 · Gamified Workbench
 
-## 像素庭院工作台：可以直接运行的通用框架
+> 推开小屋的门，开始今天的工作。累了，就去池塘边玩一关。
 
-庭院、四间独立房间、昼夜场景和互动入口已包含在 `demo/`。首次打开没有个人项目、文档或聊天。你可以把它作为自己的工作台起点。
+一个以像素庭院为入口的个人工作台，也是一份可复用的 Codex Skill。把项目、计划、日报周报和 AI 入口放进同一个小世界：找资料少翻几层，休息时也有地方可去。
 
-### 主打玩法
+[快速开始](#三分钟住进来) · [工作入口](#先把工作放到顺手的位置) · [休息玩法](#工作之间留一点好玩的) · [安装 Skill](#让-codex-继续搭建你的版本) · [测试](https://github.com/s530han8e-rgb/gamified-workbench-skill/actions/workflows/check.yml)
 
-- **78 张塔罗**：完整大阿卡纳与小阿卡纳，每张有牌面图片、正逆位与反思解读。
-- **12 关庭园拼图**：3×3 → 4×4 → 5×5，后续关卡增加打乱步数；合法移动生成，保证可还原。随机实例不保证最短解步数严格递增。
-- **12 关倒水瓶**：2～7 色、3～4 层容量，反向生成保留可解路径；支持撤销、重玩和下一关。
-- **印度占星出生信息弹窗**：首次点击先填写出生日期、时间、出生城市和时区；无需家庭门牌地址。时间未知可选择跳过，后续限制精确推断。资料仅存在使用者自己的浏览器。
-- **房间计划与日报周报归档**：房间各自保存笔记，按日期查看和填写报告；提供 ChatGPT、Codex 入口。
+![验证](https://github.com/s530han8e-rgb/gamified-workbench-skill/actions/workflows/check.yml/badge.svg)
 
-占星示例包含完整首次使用流程，**尚未内置通用排盘引擎**；配置引擎前会明确提示，不会生成伪造的个人运势。牌面解读供娱乐与自我反思。
+![夜晚的森林工作台：庭院即导航](docs/screenshots/garden-night.jpg)
 
-### 运行
+## 先把工作放到顺手的位置
+
+房门是项目入口，路牌是报告归档，庭院中的物件打开相应功能。工作与休息都留在画面里。
+
+| 走到哪里 | 可以做什么 |
+| --- | --- |
+| 四间小屋 | 分别记录计划、任务和进展；按自己的用途扩展 |
+| 日报周报路牌 | 按日期和报告类型查看、保存完整正文与来源 |
+| AI 入口 | 打开 ChatGPT 或 Codex，接着处理工作 |
+| 路灯 | 建立印度占星出生资料，查看排盘配置状态 |
+| 树篱灯 | 抽一张带图的塔罗，阅读正逆位提示 |
+| 池塘 | 打开庭园拼图或倒水瓶，慢慢玩，不计时 |
+| 右上角 | 切换昼夜、查看游玩指引 |
+
+计划与进展、报告正文、来源和关卡位置会自动保存在当前浏览器。不同房间各自保存记录，公开示例首次打开为空，方便换成自己的生活和项目。
+
+### 一座庭院，几种心情
+
+以下均为运行中的通用版实拍截图，未使用私人文档或真实项目记录。
+
+| 白天庭院 | 安静书房 |
+| --- | --- |
+| ![白天庭院与工作入口](docs/screenshots/garden-day.jpg) | ![研究书房与计划入口](docs/screenshots/study.jpg) |
+
+## 工作之间，留一点好玩的
+
+### 🧩 庭园拼图 · 12 关
+
+点击空格旁的图块，把庭院拼回完整的样子。前四关从 **3×3** 热身，中间四关进入 **4×4**，最后四关挑战 **5×5**。支持选关、重玩、完成后进入下一关，并记住所选关卡。
+
+图块经合法移动打乱，确保可还原。难度逐步提高格数和打乱预算；随机局面的最短解步数有波动，不保证每一局都比上一局难。
+
+### 🧪 倒水瓶 · 12 关
+
+先选源瓶，再选目标瓶，每次倒一层颜色。目标必须为空或顶层同色；把每种颜色装回各自的满瓶就过关。
+
+从 **2 色、每瓶 3 层** 起步，逐步扩展到 **7 色、每瓶 4 层**。支持撤销、重玩、选关和下一关。每局从完成状态反向生成，保留用于测试的还原路径。
+
+| 拼好一座庭院 | 把颜色慢慢归位 |
+| --- | --- |
+| ![庭园拼图第1关](docs/screenshots/puzzle.jpg) | ![倒水瓶第7关：5色4层](docs/screenshots/water-sort.jpg) |
+
+### 🃏 塔罗 · 78 张都有图
+
+完整的 **22 张大阿卡纳＋56 张小阿卡纳**：随机抽牌、正逆位、牌面主题与解读。把抽到的牌当作一次短暂停顿：它让你想到什么？眼前哪件事值得重新观察？
+
+### ✦ 印度占星 · 从自己的出生资料开始
+
+首次点开会弹出表单：**出生日期、出生时间、出生城市／地区／国家、时区**。不需要家庭门牌地址；不知道时间可以明确勾选。资料只存当前浏览器，可删除后重新填写。
+
+**当前公开版已实现资料弹窗和保存流程，通用排盘引擎尚未接入。** 保存后显示配置提示，暂不输出个性化每日运势。接入时需补齐坐标、历史时区与恒星黄道等计算设置；时间未知时限制上升、宫位和精确时间推断。
+
+| 塔罗牌面与解读 | 出生资料首次设置 |
+| --- | --- |
+| ![78张塔罗中的一次抽牌](docs/screenshots/tarot.jpg) | ![空白出生信息弹窗](docs/screenshots/birth-profile.jpg) |
+
+占星与塔罗面向娱乐及自我观察。
+
+## 三分钟住进来
+
+需要 Python 3 和现代浏览器，无需 API Key，无需安装前端依赖。
 
 ```bash
 git clone https://github.com/s530han8e-rgb/gamified-workbench-skill.git
@@ -22,206 +78,65 @@ cd gamified-workbench-skill
 python3 -m http.server 8080
 ```
 
-在浏览器打开 `http://localhost:8080/demo/`。不需要 API Key。点击庭院物件进入功能，右上角有游玩指引。关卡进度和笔记保存在当前浏览器；云同步需另接后端。
+打开 **<http://localhost:8080/demo/>**，点击房间或庭院物件即可使用。浏览器可能限制 `file://` 下的 ES Modules，请使用本地服务器。
 
-![白天庭院](demo/assets/map-day.jpg)
-![夜晚庭院](demo/assets/map-night.jpg)
-![通用书房场景](demo/assets/room-paper.jpg)
+## 让 Codex 继续搭建你的版本
 
-### 隐私与素材
-
-公开包采用独立示例代码和明确的素材白名单。没有导出原工作台的 `data/`、`archives/`、配置、备份、报告正文、项目状态、聊天编号或本机路径。场景画内的装饰文字属于美术素材，任务面板默认空白。
-
-图片的来源与复用范围见 [素材说明](demo/ASSETS.md)。在自己的部署中建立新的出生资料和项目数据；请勿把真实资料提交到 Git。
-
-> A reusable Codex skill for turning real projects, dated reports, and daily work into a calm, interactive game world—without hiding the underlying data model.
-
-![Garden overview](docs/screenshots/garden-overview.svg)
-
-## What this repository provides
-
-Most productivity dashboards begin with cards, sidebars, and charts. This skill begins with the user's working rhythm and turns it into a navigable world: a room can represent a project, a noticeboard can hold daily and weekly reports, a desk can open the current task, and a lamp or window can reveal quiet interactions without creating a second, disconnected dashboard.
-
-The skill guides Codex through four connected design problems:
-
-- **Information architecture:** daily records, long-running projects, sources, attachments, reports, and external handoffs.
-- **World interaction:** rooms and objects act as navigation; animation communicates state instead of becoming visual noise.
-- **Reliable persistence:** autosave states, revision checks, backups, recovery drafts, conflict handling, and deduplicated imports.
-- **Delivery:** local-first prototypes, responsive PWA installation, authenticated cloud storage, and cross-device access.
-
-The repository contains a framework only. It includes no personal journal, research subject, private project name, chat identifier, account, local path, or production data.
-
-## Experience preview
-
-These illustrations are deliberately generic mock screenshots. They demonstrate the interaction model rather than reproducing any private workbench.
-
-### 1. The illustrated world is the navigation
-
-![Garden overview with interactive locations](docs/screenshots/garden-overview.svg)
-
-Instead of placing a conventional menu under the artwork, meaningful objects carry the interface:
-
-| Object | Example action | Data it may expose |
-| --- | --- | --- |
-| Study door | Open a project room | milestones, decisions, next action |
-| Noticeboard | Open the dated archive | daily and weekly reports |
-| Workshop desk | Open a build area | tasks, files, test status |
-| Pond | Open a calm interaction | harmless experience state |
-| Lantern | Toggle day/night presentation | theme preference only |
-
-### 2. A room contains real project tools
-
-![Project room](docs/screenshots/project-room.svg)
-
-A room should be more than a decorative modal. It can contain a current objective, progress history, resources, decisions, attachments, a task queue, and an approved AI handoff. The illustrated layer and the operational layer remain connected.
-
-### 3. Saving and report history are explicit
-
-![Daily archive and autosave states](docs/screenshots/daily-archive.svg)
-
-Autosave must visibly distinguish `pending`, `saving`, `saved`, and `conflict`. Imported reports retain title, original date, complete body, provenance, verification status, and a content hash for deduplication.
-
-## Install the skill
-
-### Option A — copy the folder
-
-Copy `gamified-workbench-builder` into your Codex skills directory:
+仓库同时包含 `gamified-workbench-builder` Skill，帮助你连接自己的工作流、数据保存和场景交互。
 
 ```bash
 mkdir -p ~/.codex/skills
 cp -R gamified-workbench-builder ~/.codex/skills/
 ```
 
-Restart Codex if the skill is not discovered immediately.
+在 Codex 中使用：
 
-### Option B — install from Git
+```text
+使用 $gamified-workbench-builder，以 demo 为起点建立我的工作台。
+先确定工作入口和项目房间，再接入我的数据；保留关卡、塔罗与出生资料弹窗。
+```
+
+Skill 还覆盖来源校验、报告去重、保存冲突、备份恢复、AI 交接和跨设备架构。这些是实现指南，不代表静态示例已具备后台能力。详见 [架构](gamified-workbench-builder/references/architecture.md)、[数据契约](gamified-workbench-builder/references/data-contract.md) 与 [验收清单](gamified-workbench-builder/references/review-checklist.md)。
+
+## 当前能用到哪一步
+
+| 功能 | 公开版状态 |
+| --- | --- |
+| 庭院、四个房间、手动昼夜切换 | 可运行 |
+| 房间笔记、按日期存取日报周报与来源 | 当前浏览器自动保存 |
+| ChatGPT / Codex | 网页入口跳转；不自动发送项目内容 |
+| 78 张塔罗、拼图 12 关、倒水瓶 12 关 | 可玩 |
+| 印度占星 | 出生资料弹窗可用；排盘引擎待接 |
+| 手机电脑云同步、Notion、后台自动导入 | 需接自己的后端与授权 |
+| 独立角色逐帧动作、完整物件灯光交互 | 未包含在通用示例中 |
+
+当前浏览器存储不等于文件备份或云同步。清理浏览器数据、换设备或换访问地址不会自动迁移记录；承载重要工作前，应接入备份与存储服务。
+
+## 复用画面，保留自己的隐私
+
+公开包只有通用代码、场景美术、牌面和空白工作区。私人项目文件、聊天、报告、附件、出生资料、配置和本机路径不随示例发布。截图来自空白通用版。
+
+新增资料请放到发布目录之外；`.gitignore` 提供基础排除，发布前仍应检查提交。素材与复用边界见 [ASSETS.md](demo/ASSETS.md)，开发约定见 [安全与交接](gamified-workbench-builder/references/safety-and-handoffs.md)。
+
+## 运行检查
+
+需要 Node.js 22 或以上：
 
 ```bash
-git clone https://github.com/s530han8e-rgb/gamified-workbench-skill.git
-cp -R gamified-workbench-skill/gamified-workbench-builder ~/.codex/skills/
+node --test tests/*.test.mjs
+node scripts/check-release.mjs
 ```
 
-The skill remains available for normal automatic selection. It can also be invoked explicitly as `$gamified-workbench-builder`.
-
-## Example requests
+GitHub Actions 检查关卡可解性、移动规则、塔罗牌面、本地文档链接与公开包边界。浏览器检查记录见 [展示与验证](docs/SHOWCASE.md)。
 
 ```text
-Use $gamified-workbench-builder to design a calm, game-like research workbench.
-Start from my daily workflow and project areas before styling the scene.
+demo/                         可运行空白工作台和素材
+gamified-workbench-builder/    Codex Skill 与架构参考
+docs/screenshots/             通用版实际截图
+tests/                        关卡与牌组验证
+scripts/                      文档及发布检查
 ```
 
-```text
-Refactor this dashboard into an illustrated world.
-Keep one canonical data model, preserve autosave and history,
-and map each visible object to a meaningful action.
-```
+## 设计参考
 
-```text
-Audit this gamified workbench before release.
-Check every hotspot, mobile layout, report deduplication,
-conflict recovery, reduced motion, and per-user authorization.
-```
-
-## Recommended build sequence
-
-```mermaid
-flowchart LR
-    A[Working rhythm] --> B[Data contract]
-    B --> C[Scene map]
-    C --> D[Editing + autosave]
-    D --> E[Reports + history]
-    E --> F[Rewards + interaction]
-    F --> G[PWA]
-    G --> H[Authenticated cloud sync]
-```
-
-1. **Model the work.** Identify recurring daily actions, persistent projects, dated reports, source material, attachments, and external services.
-2. **Define canonical records.** Do not create a duplicate task system when existing data can be referenced or imported.
-3. **Map the world.** Give every interactive object a purpose and provide an optional guide listing all hotspots.
-4. **Make editing safe.** Add autosave state, atomic writes, backups, recovery drafts, and explicit conflict handling.
-5. **Add report history.** Preserve complete source text and dates; reject truncated imports; deduplicate by body hash.
-6. **Add restrained play.** Rewards may reflect completed work, but project truth must never live only inside cosmetic state.
-7. **Deliver progressively.** A local PWA is not phone sync. Cross-device use requires HTTPS hosting, authentication, server storage, and conflict handling.
-
-## The three-state model
-
-```mermaid
-flowchart TD
-    UI[Illustrated workbench]
-    UI --> D[Daily records]
-    UI --> P[Project records]
-    UI --> X[Experience state]
-    D -->|dated| DS[priorities · notes · sources · reports]
-    P -->|persistent| PS[tasks · decisions · resources · progress]
-    X -->|non-authoritative| XS[theme · motion · cosmetics · rewards]
-```
-
-- **Daily records** are dated and reviewable.
-- **Project records** persist across dates and hold authoritative work state.
-- **Experience state** controls presentation and harmless game progress.
-
-Keeping these layers separate prevents a visual reward system from overwriting or obscuring real work.
-
-## Repository map
-
-```text
-gamified-workbench-skill/
-├── README.md
-├── docs/
-│   └── screenshots/
-│       ├── garden-overview.svg
-│       ├── project-room.svg
-│       └── daily-archive.svg
-└── gamified-workbench-builder/
-    ├── SKILL.md
-    ├── agents/
-    │   └── openai.yaml
-    └── references/
-        ├── architecture.md
-        ├── data-contract.md
-        ├── review-checklist.md
-        └── safety-and-handoffs.md
-```
-
-The main `SKILL.md` contains the decision-making workflow. Supporting references are loaded only when the related architecture, persistence, safety, or review question arises.
-
-## Core invariants
-
-- One canonical record may appear in several views; several views must not silently become several sources of truth.
-- Autosave never silently overwrites a conflict.
-- Importers reject incomplete material and preserve user-edited copies.
-- External AI actions require a visible handoff, approval boundary, and return path.
-- Private content does not enter a public repository or client bundle.
-- Animation remains calm, optional, readable, keyboard accessible, and touch accessible.
-- A hosted write is authorized for the signed-in user; possession of a URL is not authorization.
-
-## Definition of done
-
-Before calling the workbench complete, verify observable behavior:
-
-- every hotspot opens the intended target;
-- touch and keyboard paths work;
-- save and recovery survive reloads;
-- duplicate imports do not duplicate records;
-- imports do not overwrite edited records;
-- day/night and reduced-motion modes remain legible;
-- mobile layouts preserve core actions;
-- server-side writes are authorized per user;
-- backups can be restored;
-- the interaction guide matches the current scene.
-
-The full checklist is in [`references/review-checklist.md`](gamified-workbench-builder/references/review-checklist.md).
-
-## Privacy boundary
-
-This public repository intentionally contains only reusable structure and synthetic examples. When applying the skill to a real workbench:
-
-1. keep private records outside the public source tree;
-2. use templates or fixtures for demonstrations;
-3. require authenticated storage for cloud persistence;
-4. inspect screenshots, logs, archives, and build artifacts before publishing;
-5. never treat a public front-end bundle as a secrets store.
-
-## License and reuse
-
-The skill is designed to be adapted. Before redistributing it, add the license that matches your intended reuse policy and verify that any visual assets you add are original or appropriately licensed.
+展示形式参考 [Trianon](https://github.com/qimingjiu/Trianon) 的场景画廊与功能边界说明，以及 [RSSHub](https://github.com/DIYgod/RSSHub) 的简洁入口组织。采用自己的像素庭院、美术和实现，没有复制它们的界面代码。
