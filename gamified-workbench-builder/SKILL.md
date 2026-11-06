@@ -23,6 +23,14 @@ Read [references/architecture.md](references/architecture.md) when choosing the 
 
 ## Make the world functional
 
+Use `../../demo/` as a runnable neutral starter when this repository is available. Its illustrations and empty rooms are reusable; never copy the maintainer's private workbench data to populate a new user's instance.
+
+When implementing Indian astrology, show a first-use modal before any personalized reading. Collect birth date, birth time (or explicitly unknown), birth city/region/country, and timezone. Resolve and confirm coordinates and historical timezone for an actual chart. Do not ask for a street address. Keep the profile local by default and offer edit/delete. Missing birth time limits ascendant, houses and precise timing. Require a configured ephemeris, explicit sidereal/ayanamsa settings and calculation date; without an engine show an unconfigured state instead of reusing another person's reading.
+
+Feature the complete illustrated 78-card tarot, progressive sliding puzzle and progressive water-sort in the README. Puzzle levels increase grid size and scramble budget; water levels increase colors/capacity. Generate solvable instances, show current level, support replay/next and retain harmless progress separately from project records. Describe stochastic difficulty honestly.
+
+For public distribution, build from an allowlist of neutral code, empty examples and reviewed artwork. Exclude report bodies, chats, local paths, personal birth profiles, project names/status, attachments, configuration and backups. Inspect image content and metadata as well as text. Do not publish the private application directory wholesale.
+
 Treat the illustrated scene as the primary navigation surface. Map meaningful objects to actions: a desk can open project progress, a noticeboard can show reports, a lamp can reveal a daily ritual, and a device can open an approved external handoff.
 
 Avoid adding a second dashboard below the scene that repeats the same functions. Use an in-world object, room, drawer, book, calendar, or modal when content needs more space. Provide an optional guide that lists every interactive object and its effect.

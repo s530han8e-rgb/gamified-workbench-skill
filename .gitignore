@@ -1,0 +1,8 @@
+.DS_Store
+.env*
+data/
+archives/
+backups/
+private/
+*.log
+birth-profile.json

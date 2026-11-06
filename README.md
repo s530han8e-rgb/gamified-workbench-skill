@@ -1,5 +1,39 @@
 # Gamified Workbench Builder
 
+## 像素庭院工作台：可以直接运行的通用框架
+
+庭院、四间独立房间、昼夜场景和互动入口已包含在 `demo/`。首次打开没有个人项目、文档或聊天。你可以把它作为自己的工作台起点。
+
+### 主打玩法
+
+- **78 张塔罗**：完整大阿卡纳与小阿卡纳，每张有牌面图片、正逆位与反思解读。
+- **12 关庭园拼图**：3×3 → 4×4 → 5×5，后续关卡增加打乱步数；合法移动生成，保证可还原。随机实例不保证最短解步数严格递增。
+- **12 关倒水瓶**：2～7 色、3～4 层容量，反向生成保留可解路径；支持撤销、重玩和下一关。
+- **印度占星出生信息弹窗**：首次点击先填写出生日期、时间、出生城市和时区；无需家庭门牌地址。时间未知可选择跳过，后续限制精确推断。资料仅存在使用者自己的浏览器。
+- **房间计划与日报周报归档**：房间各自保存笔记，按日期查看和填写报告；提供 ChatGPT、Codex 入口。
+
+占星示例包含完整首次使用流程，**尚未内置通用排盘引擎**；配置引擎前会明确提示，不会生成伪造的个人运势。牌面解读供娱乐与自我反思。
+
+### 运行
+
+```bash
+git clone https://github.com/s530han8e-rgb/gamified-workbench-skill.git
+cd gamified-workbench-skill
+python3 -m http.server 8080
+```
+
+在浏览器打开 `http://localhost:8080/demo/`。不需要 API Key。点击庭院物件进入功能，右上角有游玩指引。关卡进度和笔记保存在当前浏览器；云同步需另接后端。
+
+![白天庭院](demo/assets/map-day.jpg)
+![夜晚庭院](demo/assets/map-night.jpg)
+![通用书房场景](demo/assets/room-paper.jpg)
+
+### 隐私与素材
+
+公开包采用独立示例代码和明确的素材白名单。没有导出原工作台的 `data/`、`archives/`、配置、备份、报告正文、项目状态、聊天编号或本机路径。场景画内的装饰文字属于美术素材，任务面板默认空白。
+
+图片的来源与复用范围见 [素材说明](demo/ASSETS.md)。在自己的部署中建立新的出生资料和项目数据；请勿把真实资料提交到 Git。
+
 > A reusable Codex skill for turning real projects, dated reports, and daily work into a calm, interactive game world—without hiding the underlying data model.
 
 ![Garden overview](docs/screenshots/garden-overview.svg)
