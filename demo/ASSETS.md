@@ -1,7 +1,7 @@
-# 素材说明
+# Assets
 
-庭院昼夜图和四个室内场景由仓库维护者提供并授权随本框架发布。它们是通用装饰场景，未复制私人文档或真实工作界面。
+The maintainer supplied the day/night garden and four interior scenes for distribution with this framework. They are decorative scenes and contain no private documents or real project records.
 
-塔罗为历史 Rider–Waite–Smith 图像。历史作品的保护期和再发行条件因地区而异；本仓库不声称拥有原作版权。商用或二次分发前请核对使用地区的适用权利。
+The card images reproduce the historical Rider-Waite-Smith deck. The project claims no ownership of the original artwork. Copyright duration and reproduction rights vary by jurisdiction; verify the rights applicable to your intended redistribution.
 
-本次发布未导出图片拍摄位置、EXIF 作者信息或本机文件路径。所有真实项目数据应存放在发布目录之外。
+The release checks reject JPEG EXIF/XMP metadata. Keep real records and identifying information outside this directory.

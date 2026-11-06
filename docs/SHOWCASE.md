@@ -1,7 +1,7 @@
-# 展示与验证
+# Showcase and Verification
 
-README 图片截自运行中的空白通用版：庭院昼夜、书房、拼图、倒水瓶、塔罗和空白出生资料表，没有使用私人工作台截图。
+README screenshots are captured from the running neutral English starter: day/night gardens, study, puzzle, water sort, tarot and an empty birth-profile form. They are not screenshots of the maintainer's private workbench.
 
-浏览器人工检查覆盖庭院到房间、计划入口、弹窗关闭、出生资料首次弹窗、拼图和倒水瓶切换、选择第7关与塔罗牌面加载。截图展示实际状态，不表示云同步或排盘引擎已完成。
+Browser review covers room navigation, plans, modal closing, first-use birth setup, switching games, selecting level 7 and loading tarot artwork. The screenshots do not imply cloud sync or a chart engine is connected.
 
-自动测试重复生成每个关卡，逐步执行倒水瓶还原路径；验证拼图排列奇偶性、相邻移动与过关规则；检查78张牌面存在且唯一。发布检查覆盖 Markdown 本地链接、JPEG 元数据和禁止发布的私人目录。
+Automated checks generate each level repeatedly and replay every water-sort solution. They verify puzzle solvability through permutation parity, adjacent moves, completion rules and all 78 unique card images. Release checks cover local Markdown links, English-only source text, image metadata and private-directory exclusions. Raster image text is reviewed separately during screenshot capture.
